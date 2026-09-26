@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edu Torregrosa · Player 1 — Videojuegos, Programación, IA y Crypto</title>
+  <meta name="description" content="Portafolio retro-arcade de Edu Torregrosa, estudiante de 1º DAM en el IES Simarro: desarrollo de videojuegos, programación, criptomonedas e IA. Objetivo: desarrollador freelance.">
+  <meta name="author" content="Edu Torregrosa">
+  <meta name="theme-color" content="#14102e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-booting">
+  <div class="crt" aria-hidden="true">
+    <span class="crt__scan"></span>
+    <span class="crt__vig"></span>
+    <span class="crt__noise"></span>
+  </div>
+  <div class="boot" id="boot" role="status" aria-live="polite">
+    <p class="boot__logo">EDU<span>TV</span> <em>v1.0</em></p>
+    <pre class="boot__log" id="bootLog"></pre>
+    <div class="boot__bar" aria-hidden="true"><span id="bootBar"></span></div>
+    <p class="boot__hint" id="bootHint">INSERTE MONEDA…</p>
+  </div>
+  <a class="skip" href="#sobre-mi">Saltar al contenido</a>
+  <header class="hud" id="hud">
+    <a class="hud__brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="hud__coin" aria-hidden="true"></span>
+      EDU<b>TORREGROSA</b>
+    </a>
+    <nav class="hud__nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio"       class="nav-link">Inicio</a></li>
+        <li><a href="#sobre-mi"     class="nav-link">Sobre&nbsp;mí</a></li>
+        <li><a href="#quests"       class="nav-link">Misiones</a></li>
+        <li><a href="#inventario"   class="nav-link">Inventario</a></li>
+        <li><a href="#freelance"    class="nav-link">Freelance</a></li>
+        <li><a href="#contacto"     class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="hud__stats" aria-hidden="true">
+      <span class="chip chip--lvl">LVL <b id="hudLvl">18</b></span>
+      <span class="chip chip--coin">×<b id="hudCoins">000</b></span>
+      <span class="chip chip--hp"><i class="hp"><b id="hudHp"></b></i></span>
+    </div>
+    <button class="hud__sfx" id="sfxBtn" aria-pressed="false">SFX OFF</button>
+  </header>
+  <main>
+    <section class="title" id="inicio" aria-labelledby="title-h">
+      <div class="title__marquee">
+        <p class="title__press" aria-hidden="true">P1&nbsp;READY</p>
+        <h1 class="title__word" id="title-h">
+          <span class="title__line">EDU</span>
+          <span class="title__line title__line--thin">TORREGROSA</span>
+        </h1>
+        <p class="title__phrase">
+          <span class="vt">1º de DAM · IES Simarro ·</span>
+          <b>Subiendo de nivel un commit a la vez.</b>
+          Videojuegos, código, IA y cripto — sin continuaciones infinitas.
+        </p>
+        <div class="title__cta">
+          <a class="btn btn--sun" href="#quests"><span class="btn__key">A</span> Ver misiones</a>
+          <a class="btn btn--ghost" href="#contacto"><span class="btn__key">B</span> Escríbeme</a>
+        </div>
+        <p class="title__scroll vt">▼ scroll para continuar</p>
+      </div>
+      <aside class="card card--player" aria-label="Ficha rápida">
+        <h2 class="card__head">PLAYER&nbsp;INFO</h2>
+        <div class="card__body">
+          <img src="https://picsum.photos/seed/edu-pixel-portrait-arcade/480/480" alt="Retrato pixelado de Edu Torregrosa" width="480" height="480">
+          <dl class="specs">
+            <dt>Clase</dt><dd>Desarrollador Jr.</dd>
+            <dt>Gremio</dt><dd>IES Simarro · DAM</dd>
+            <dt>Región</dt><dd>Xàbia, Alacant</dd>
+            <dt>Armas</dt><dd>Unity · Java · Python · APIs IA</dd>
+            <dt>Objetivo</dt><dd class="hl">Freelance 2026</dd>
+          </dl>
+        </div>
+      </aside>
+      <ul class="stat-strip" aria-label="Marcadores">
+        <li><b class="num" data-count="7">0</b><span class="vt">proyectos activos</span></li>
+        <li><b class="num" data-count="512">0</b><span class="vt">commits este año</span></li>
+        <li><b class="num" data-count="12">0</b><span class="vt">cumbres subidas</span></li>
+        <li><b class="num" data-count="60">0</b><span class="vt">juegos terminados</span></li>
+      </ul>
+      <div class="range" aria-hidden="true">
+        <svg class="range__layer" data-depth="6"  viewBox="0 0 600 300" preserveAspectRatio="none"><path d="M0,220 60,140 110,190 180,100 250,175 320,120 400,200 470,130 540,195 600,150 600,300 0,300Z"/></svg>
+        <svg class="range__layer" data-depth="14" viewBox="0 0 600 300" preserveAspectRatio="none"><path d="M0,250 70,170 140,225 220,130 300,215 380,150 450,230 520,165 600,235 600,300 0,300Z"/></svg>
+        <svg class="range__layer" data-depth="26" viewBox="0 0 600 300" preserveAspectRatio="none"><path d="M0,285 90,215 170,265 260,190 350,260 440,205 520,270 600,225 600,300 0,300Z"/></svg>
+        <div class="range__grid"></div>
+      </div>
+    </section>
+    <section class="stage stage--about" id="sobre-mi" aria-labelledby="about-h">
+      <header class="stage__head">
+        <p class="kicker vt">STAGE 01 — PERFIL</p>
+        <h2 class="stage__title" data-scramble>Sobre mí</h2>
+        <p class="stage__sub vt">Quién es el jugador detrás del mando</p>
+      </header>
+      <div class="about">
+        <article class="dialog" data-reveal>
+          <p class="dialog__who"><b>EDU</b> <span class="vt">— PLAYER 1</span></p>
+          <p class="dialog__text" data-typewriter="De Xàbia, 19 años, estudiante de 1º de DAM en el IES Simarro. Empecé haciendo mods para que mis amigos jugaran y acabé montando pipelines, bots y modelos. Me obsesiona la parte en la que el código se convierte en algo que se puede tocar: un salto que funciona, un enemigo que aprende, una interfaz que responde. Ahora mismo estoy construyendo mi camino como desarrollador freelance, con la vista puesta en videojuegos e integración de IA. Y cuando suelto el mando, me voy a la montaña: el silencio de un sendero a las 7 de la mañana recarga la barra de vida mejor que cualquier café."></p>
+          <p class="dialog__prompt vt" aria-hidden="true">▼</p>
+        </article>
+        <div class="xp" data-reveal>
+          <h3 class="block-title">XP de habilidades</h3>
+          <ul class="xp__list">
+            <li><span class="xp__name">Python</span>          <i class="bar"><b style="--xp:82%"></b></i><span class="xp__val vt">82</span></li>
+            <li><span class="xp__name">Java&nbsp;·&nbsp;DAM</span><i class="bar"><b style="--xp:74%"></b></i><span class="xp__val vt">74</span></li>
+            <li><span class="xp__name">JavaScript&nbsp;/&nbsp;Web</span><i class="bar"><b style="--xp:70%"></b></i><span class="xp__val vt">70</span></li>
+            <li><span class="xp__name">Unity&nbsp;/&nbsp;C#</span><i class="bar"><b style="--xp:66%"></b></i><span class="xp__val vt">66</span></li>
+            <li><span class="xp__name">IA&nbsp;/&nbsp;LLMs</span><i class="bar"><b style="--xp:58%"></b></i><span class="xp__val vt">58</span></li>
+            <li><span class="xp__name">Blockchain</span>      <i class="bar"><b style="--xp:44%"></b></i><span class="xp__val vt">44</span></li>
+          </ul>
+        </div>
+      </div>
+      <section class="select" aria-labelledby="select-h" data-reveal>
+        <h3 class="block-title" id="select-h">Select stage · trayectoria</h3>
+        <ol class="select__track" tabindex="0" aria-label="Línea temporal">
+          <li class="select__node"><span class="vt">2019</span><h4>Primer mod</h4><p>Tocaba parámetros de juegos ajenos hasta entender por qué funcionaban.</p></li>
+          <li class="select__node"><span class="vt">2021</span><h4>Game Jam</h4><p>Mi primer prototipo completo en 48 horas. Dormí poco, aprendí muchísimo.</p></li>
+          <li class="select__node"><span class="vt">2023</span><h4>Bots &amp; crypto</h4><p>Automatizaciones en Python y un tracker de cartera para dejar de mirar el móvil.</p></li>
+          <li class="select__node is-now"><span class="vt">2025</span><h4>1º DAM</h4><p>IES Simarro. Bases sólidas de programación, estructuras de datos y despliegue.</p></li>
+          <li class="select__node is-next"><span class="vt">2026</span><h4>Freelance</h4><p>Prototipos, bots y features de IA para estudios pequeños y gente con prisa.</p></li>
+        </ol>
+      </section>
+    </section>
+    <section class="stage stage--quests" id="quests" aria-labelledby="quests-h">
+      <header class="stage__head">
+        <p class="kicker vt">STAGE 02 — REGISTRO DE MISIONES</p>
+        <h2 class="stage__title" data-scramble>Lo que he hecho</h2>
+        <p class="stage__sub vt">Filtrar por clase de misión · <span id="questCount">7</span> misiones en el registro</p>
+      </header>
+      <div class="quests">
+        <aside class="quests__aside">
+          <div class="filter" role="group" aria-label="Filtrar misiones">
+            <button class="filter__btn is-on" data-filter="all">Todas</button>
+            <button class="filter__btn" data-filter="juego">Videojuegos</button>
+            <button class="filter__btn" data-filter="code">Programación</button>
+            <button class="filter__btn" data-filter="crypto">Cripto</button>
+            <button class="filter__btn" data-filter="ia">IA</button>
+          </div>
+          <div class="legend">
+            <h3 class="vt">Dificultad</h3>
+            <p><span class="stars">★★☆☆☆</span> misión de práctica</p>
+            <p><span class="stars">★★★☆☆</span> entrega de ciclo</p>
+            <p><span class="stars">★★★★☆</span> proyecto personal</p>
+            <p><span class="stars">★★★★★</span> me costó noches</p>
+          </div>
+          <p class="quests__note vt">Todo el código está en mi GitHub. Si ves algo raro, dime — prefiero un bug report a un cumplido.</p>
+        </aside>
+        <div class="quests__list" id="questsList">
+          <article class="quest" data-cat="juego" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/pixel-platformer-cave-game/800/500" alt="Captura de un plataformas 2D en una cueva pixelada" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 01 · VIDEOJUEGOS</p>
+              <h3 class="quest__name">Caverna de Píxel</h3>
+              <p class="quest__meta"><span class="stars">★★★★☆</span><span>Unity · C#</span><span class="badge badge--done">Completada</span></p>
+              <p class="quest__desc">Plataformas 2D con física de doble salto, enemigos con máquina de estados y tres niveles. Generación de mapa por semilla para que cada partida cambie. Se presentó a la Game Jam del centro y quedó segunda.</p>
+              <ul class="tags"><li>C#</li><li>Unity</li><li>Tiled</li><li>State&nbsp;Machine</li></ul>
+              <a class="link-arrow" href="#contacto">Pedir la build <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="quest" data-cat="juego" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/retade-arcade-cabinet-neon/800/500" alt="Máquina recreativa con pantalla iluminada" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 02 · VIDEOJUEGOS</p>
+              <h3 class="quest__name">Arcade Rescate</h3>
+              <p class="quest__meta"><span class="stars">★★★☆☆</span><span>raylib · C</span><span class="badge badge--wip">En curso</span></p>
+              <p class="quest__desc">Remake de un matamarcianos de los 90 con render propio: sprites en rejilla, partículas y screen shake. Objetivo de la misión: 60 FPS estables en un portátil de 2015.</p>
+              <ul class="tags"><li>C</li><li>raylib</li><li>Pixel&nbsp;Art</li><li>Chiptune</li></ul>
+              <a class="link-arrow" href="#contacto">Ver el proceso <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="quest" data-cat="code" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/java-desktop-inventory-app/800/500" alt="Interfaz de una aplicación de escritorio con tablas" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 03 · PROGRAMACIÓN</p>
+              <h3 class="quest__name">Gestor Simarro</h3>
+              <p class="quest__meta"><span class="stars">★★★☆☆</span><span>Java · MySQL · JDBC</span><span class="badge badge--done">Completada</span></p>
+              <p class="quest__desc">Aplicación de escritorio para gestionar el préstamo de material del ciclo: alta de equipos, incidencias y exportación a CSV. Capas, DAO y base de datos normalizada. Primera vez que diseño yo el esquema.</p>
+              <ul class="tags"><li>Java</li><li>MySQL</li><li>JavaFX</li><li>UML</li></ul>
+              <a class="link-arrow" href="#contacto">Ver el repositorio <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="quest" data-cat="crypto code" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/crypto-terminal-candles-green/800/500" alt="Gráfico de velas en una terminal oscura" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 04 · CRIPTO + CÓDIGO</p>
+              <h3 class="quest__name">Wallet Watch</h3>
+              <p class="quest__meta"><span class="stars">★★★★☆</span><span>Python · websockets</span><span class="badge badge--done">Completada</span></p>
+              <p class="quest__desc">Monitor de cartera con alertas por Telegram: PnL en vivo, avisos de movimiento anormal y un histórico en SQLite. Aprendí a consumir APIs REST y websocket, y sobre todo a no fiarme de ningún dato sin validarlo.</p>
+              <ul class="tags"><li>Python</li><li>REST</li><li>WebSocket</li><li>SQLite</li></ul>
+              <a class="link-arrow" href="#contacto">Cómo funciona <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="quest" data-cat="crypto" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/blockchain-smart-contract-solidity/800/500" alt="Código de un contrato inteligente" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 05 · CRIPTO</p>
+              <h3 class="quest__name">Contrato de bolsillo</h3>
+              <p class="quest__meta"><span class="stars">★★☆☆☆</span><span>Solidity · testnet</span><span class="badge badge--wip">En curso</span></p>
+              <p class="quest__desc">Contrato de depósito con liberación por fechas, probado en testnet y con tests en Foundry. Nada que desplegar en mainnet todavía: es mi forma de entender de verdad qué pasa cuando el código no se puede parchear.</p>
+              <ul class="tags"><li>Solidity</li><li>Foundry</li><li>Testnet</li></ul>
+              <a class="link-arrow" href="#contacto">Aprendiendo en abierto <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="quest" data-cat="ia" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/ai-classroom-assistant-chatbot/800/500" alt="Ventana de chat de un asistente con IA" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 06 · IA</p>
+              <h3 class="quest__name">Tutor de Aula</h3>
+              <p class="quest__meta"><span class="stars">★★★★★</span><span>RAG · Python · API LLM</span><span class="badge badge--done">Completada</span></p>
+              <p class="quest__desc">Asistente que responde con la documentación del ciclo: troceo los PDF, incrusto, busco por similitud y devuelvo la fuente. El 80&nbsp;% del trabajo fue la parte aburrida —limpiar texto y evaluar respuestas— y ahí estuvo la gracia.</p>
+              <ul class="tags"><li>RAG</li><li>Embeddings</li><li>FastAPI</li><li>Chroma</li></ul>
+              <a class="link-arrow" href="#contacto">Probar demo <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="quest" data-cat="ia code" data-reveal>
+            <figure class="quest__media"><img src="https://picsum.photos/seed/neural-network-training-graphs/800/500" alt="Gráficas de entrenamiento de una red neuronal" width="800" height="500"></figure>
+            <div class="quest__body">
+              <p class="quest__tag">MISIÓN 07 · IA + CÓDIGO</p>
+              <h3 class="quest__name">Pixel or Not</h3>
+              <p class="quest__meta"><span class="stars">★★★☆☆</span><span>PyTorch · 91&nbsp;% acierto</span><span class="badge badge--done">Completada</span></p>
+              <p class="quest__desc">Clasificador que distingue arte pixelado real de un filtro mal puesto. Red pequeña, dataset propio de 4.200 imágenes y aumento de datos. Se usa dentro del remake Arcade Rescate para elegir sprites.</p>
+              <ul class="tags"><li>PyTorch</li><li>Dataset</li><li>ONNX</li></ul>
+              <a class="link-arrow" href="#contacto">Ver el dataset <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="stage stage--bag" id="inventario" aria-labelledby="bag-h">
+      <header class="stage__head">
+        <p class="kicker vt">STAGE 03 — INVENTARIO</p>
+        <h2 class="stage__title" data-scramble>Me gusta</h2>
+        <p class="stage__sub vt">Objetos equipados fuera del teclado</p>
+      </header>
+      <div class="bag">
+        <figure class="postcard postcard--a" data-reveal>
+          <img src="https://picsum.photos/seed/montgo-mountain-trail-sunrise/700/520" alt="Sendero de montaña al amanecer" width="700" height="520">
+          <figcaption><b>La montaña</b><span class="vt">Senderos del Montgó y la Cumbre del Sol antes de que salga el sol. Mochila, agua y cero notificaciones.</span></figcaption>
+        </figure>
+        <figure class="postcard postcard--b" data-reveal>
+          <img src="https://picsum.photos/seed/hiking-boots-summit-cross/700/520" alt="Botas de senderismo en una cima" width="700" height="520">
+          <figcaption><b>Cimas y mapas</b><span class="vt">12 subidas registradas. Objetivo del año: Puig Campana en invierno.</span></figcaption>
+        </figure>
+        <figure class="postcard postcard--c" data-reveal>
+          <img src="https://picsum.photos/seed/retro-console-cartridge-shelf/700/520" alt="Estantería con consolas y cartuchos retro" width="700" height="520">
+          <figcaption><b>Videojuegos</b><span class="vt">De los cartuchos de mi padre a los indies de ahora. 60 juegos terminados y una lista de pendientes que asusta.</span></figcaption>
+        </figure>
+        <figure class="postcard postcard--d" data-reveal>
+          <img src="https://picsum.photos/seed/pixel-controller-gamepad-desk/700/520" alt="Mando de videojuego sobre un escritorio" width="700" height="520">
+          <figcaption><b>Diseño de juegos</b><span class="vt">Lo que me gusta no es jugar: es entender por qué un salto se siente bien.</span></figcaption>
+        </figure>
+        <figure class="postcard postcard--e" data-reveal>
+          <img src="https://picsum.photos/seed/open-source-code-terminal-night/700/520" alt="Editor de código de noche" width="700" height="520">
+          <figcaption><b>Código abierto</b><span class="vt">Leer repos ajenos es mi forma de estudiar. Y de robar ideas, honestamente.</span></figcaption>
+        </figure>
+        <div class="trophies" data-reveal>
+          <h3 class="block-title">Trofeos desbloqueados</h3>
+          <ul>
+            <li class="trophy"><span aria-hidden="true">🏅</span> 2º puesto Game Jam Simarro</li>
+            <li class="trophy"><span aria-hidden="true">⚡</span> Primer deploy a producción</li>
+            <li class="trophy"><span aria-hidden="true">🤖</span> Bot en activo desde hace 6 meses</li>
+            <li class="trophy"><span aria-hidden="true">🧠</span> Curso de IA aplicada terminado</li>
+            <li class="trophy"><span aria-hidden="true">🥾</span> 12 cumbres con GPS guardado</li>
+            <li class="trophy is-locked"><span aria-hidden="true">🔒</span> Contrato freelance (próximo)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="stage stage--shop" id="freelance" aria-labelledby="shop-h">
+      <header class="stage__head">
+        <p class="kicker vt">STAGE 04 — TIENDA</p>
+        <h2 class="stage__title" data-scramble>Modo freelance</h2>
+        <p class="stage__sub vt">Lo que quiero ser: desarrollador por cuenta propia, con criterio y sin humo</p>
+      </header>
+      <div class="shop">
+        <div class="shop__intro" data-reveal>
+          <p>Estudio de día y construyo de noche. Busco trabajos pequeños y reales: un prototipo que haya que terminar, un bot que deje de hacerme falta a mí, una feature de IA que alguien no sabe por dónde coger. Entrego código legible, plazos escritos y una demo que se pueda tocar.</p>
+          <p class="vt hl">Estado del servidor: <b>abiendo agenda para 2026</b>.</p>
+        </div>
+        <ul class="shop__list">
+          <li class="row" data-reveal>
+            <span class="row__ico" aria-hidden="true">🎮</span>
+            <div><h3>Prototipos y videojuegos</h3><p class="vt">Gameplay 2D en Unity o raylib, hasta vertical slice presentable.</p></div>
+            <span class="row__price">desde<b>250&nbsp;€</b></span>
+            <a class="row__buy" href="mailto:hello@edutorregrosa.dev?subject=Misi%C3%B3n%3A%20videojuego">Contratar</a>
+          </li>
+          <li class="row" data-reveal>
+            <span class="row__ico" aria-hidden="true">🐍</span>
+            <div><h3>Bots y automatización</h3><p class="vt">Scripts en Python, scrapers, alertas a Telegram, tareas programadas.</p></div>
+            <span class="row__price">desde<b>120&nbsp;€</b></span>
+            <a class="row__buy" href="mailto:hello@edutorregrosa.dev?subject=Misi%C3%B3n%3A%20bot">Contratar</a>
+          </li>
+          <li class="row" data-reveal>
+            <span class="row__ico" aria-hidden="true">🧠</span>
+            <div><h3>IA integrada</h3><p class="vt">Chatbots con RAG, resúmenes, clasificación y conexión a APIs de modelos.</p></div>
+            <span class="row__price">desde<b>300&nbsp;€</b></span>
+            <a class="row__buy" href="mailto:hello@edutorregrosa.dev?subject=Misi%C3%B3n%3A%20IA">Contratar</a>
+          </li>
+          <li class="row" data-reveal>
+            <span class="row__ico" aria-hidden="true">🕹️</span>
+            <div><h3>Web y mantenimiento</h3><p class="vt">HTML/CSS/JS puro, sin frameworks inflados, con hosting y copias de seguridad.</p></div>
+            <span class="row__price">desde<b>180&nbsp;€</b></span>
+            <a class="row__buy" href="mailto:hello@edutorregrosa.dev?subject=Misi%C3%B3n%3A%20web">Contratar</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="save" id="contacto" aria-labelledby="save-h">
+    <div class="save__inner">
+      <header class="save__head">
+        <p class="kicker vt">SAVE POINT — GUARDAR PARTIDA</p>
+        <h2 id="save-h" data-scramble>Hablemos</h2>
+        <p>Respuesta en menos de 24 h. Sin plantillas, sin embudo de ventas.</p>
+      </header>
+      <form class="console" id="mailForm" novalidate>
+        <label for="fName"><span class="vt">01</span> Tu nombre</label>
+        <input id="fName" name="name" type="text" placeholder="Player 2…" autocomplete="name" required>
+        <label for="fMail"><span class="vt">02</span> Correo</label>
+        <input id="fMail" name="mail" type="email" placeholder="tu@correo.com" autocomplete="email" required>
+        <label for="fMsg"><span class="vt">03</span> La misión</label>
+        <textarea id="fMsg" name="msg" rows="4" placeholder="Qué hay que construir, cuándo y con qué presupuesto…" required></textarea>
+        <button class="btn btn--lime" type="submit"><span class="btn__key">↵</span> Redactar correo</button>
+        <p class="console__status vt" id="formStatus" role="status">Esperando entrada…</p>
+      </form>
+      <ul class="links">
+        <li><span class="vt">Email</span><a href="mailto:hello@edutorregrosa.dev">hello@edutorregrosa.dev</a></li>
+        <li><span class="vt">GitHub</span><a href="https://github.com/" target="_blank" rel="noopener">github.com/edutorregrosa</a></li>
+        <li><span class="vt">LinkedIn</span><a href="https://www.linkedin.com/" target="_blank" rel="noopener">/in/edutorregrosa</a></li>
+        <li><span class="vt">Ubicación</span><span>Xàbia · Alicante · España</span></li>
+      </ul>
+      <div class="save__foot">
+        <p>© <span id="year">2025</span> Edu Torregrosa · 1º DAM · IES Simarro</p>
+        <p class="vt">Hecho a mano con HTML, CSS y JS. Truco Konami incluido: ↑ ↑ ↓ ↓ ← → ← → B A</p>
+      </div>
+    </div>
+  </footer>
+  <button class="top" id="topBtn" aria-label="Volver arriba">▲</button>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+  <script src="script.js"></script>
+</body>
+</html>
