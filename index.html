@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,6 +7,7 @@
   <meta name="description" content="Portafolio retro-arcade de Edu Torregrosa, estudiante de 1º DAM en el IES Simarro: desarrollo de videojuegos, programación, criptomonedas e IA. Objetivo: desarrollador freelance.">
   <meta name="author" content="Edu Torregrosa">
   <meta name="theme-color" content="#14102e">
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -344,6 +344,30 @@
   </footer>
   <button class="top" id="topBtn" aria-label="Volver arriba">▲</button>
   <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+  <!-- ===== WIDGET DEL TIEMPO CON SELECTOR ===== -->
+  <div class="wx" id="wxWidget" aria-live="polite">
+    <div class="wx__top">
+      <label class="wx__label" for="wxCity">CLIMA</label>
+      <select id="wxCity" class="wx__select" aria-label="Elegir ciudad">
+        <option value="Valencia">Valencia</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Barcelona">Barcelona</option>
+        <option value="Xàtiva">Xàtiva</option>
+      </select>
+    </div>
+    <div class="wx__body">
+      <span class="wx__icon" id="wxIcon" aria-hidden="true">⏳</span>
+      <span class="wx__temp" id="wxTemp">--°</span>
+      <span class="wx__desc" id="wxDesc">Cargando…</span>
+    </div>
+    <div class="wx__meta">
+      <span>Viento <b id="wxWind">--</b></span>
+      <span>Humedad <b id="wxHum">--</b></span>
+    </div>
+  </div>
+  <!-- ===== /WIDGET DEL TIEMPO ===== -->
+
   <script src="script.js"></script>
 </body>
 </html>

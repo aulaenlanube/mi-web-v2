@@ -1,4 +1,3 @@
-
 (() => {
   'use strict';
   const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -236,3 +235,73 @@
   addEventListener('DOMContentLoaded', runBoot);
   if (document.readyState !== 'loading') runBoot();
 })();
+
+/* ===== WIDGET DEL TIEMPO + SELECTOR ===== */
+(function () {
+  "use strict";
+
+  const CODES = {
+    0:["☀️","Despejado"], 1:["🌤️","Mayormente despejado"], 2:["⛅","Parcialmente nublado"],
+    3:["☁️","Nublado"], 45:["🌫️","Niebla"], 48:["🌫️","Niebla helada"],
+    51:["🌦️","Llovizna ligera"], 53:["🌦️","Llovizna"], 55:["🌧️","Llovizna intensa"],
+    61:["🌧️","Lluvia ligera"], 63:["🌧️","Lluvia"], 65:["🌧️","Lluvia intensa"],
+    71:["❄️","Nieve ligera"], 73:["❄️","Nieve"], 75:["❄️","Nieve intensa"],
+    80:["🌦️","Chubascos ligeros"], 81:["🌧️","Chubascos"], 82:["⛈️","Chubascos intensos"],
+    95:["⛈️","Tormenta"], 96:["⛈️","Tormenta con granizo"], 99:["⛈️","Tormenta intensa"]
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const widget = $("wxWidget");
+  const select = $("wxCity");
+  if (!widget || !select) return;
+
+  let city = select.value || "Valencia";
+
+  async function render(c) {
+    widget.classList.remove("is-error");
+    widget.classList.add("is-loading");
+    $("wxDesc").textContent = "Cargando…";
+
+    try {
+      // 1) nombre -> coordenadas (geocoding gratuito, sin API key)
+      const geo = await fetch(
+        "https://geocoding-api.open-meteo.com/v1/search?name=" +
+        encodeURIComponent(c) + "&count=1&language=es&country=ES&format=json"
+      ).then(r => r.json());
+
+      if (!geo.results || !geo.results.length) throw new Error("Ciudad no encontrada");
+      const { latitude, longitude, timezone } = geo.results[0];
+
+      // 2) clima actual
+      const data = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=" + latitude +
+        "&longitude=" + longitude +
+        "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code" +
+        "&timezone=" + encodeURIComponent(timezone)
+      ).then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); });
+
+      const cur = data.current;
+      if (!cur) throw new Error("Sin datos");
+      const info = CODES[cur.weather_code] || ["🌡️", "Clima"];
+
+      $("wxIcon").textContent = info[0];
+      $("wxTemp").textContent = Math.round(cur.temperature_2m) + "°";
+      $("wxDesc").textContent = info[1];
+      $("wxWind").textContent = Math.round(cur.wind_speed_10m) + " km/h";
+      $("wxHum").textContent  = Math.round(cur.relative_humidity_2m) + "%";
+
+      widget.classList.remove("is-loading");
+    } catch (err) {
+      widget.classList.remove("is-loading");
+      widget.classList.add("is-error");
+      $("wxTemp").textContent = "--°";
+      $("wxDesc").textContent = "Clima no disponible";
+      console.warn("Weather:", err);
+    }
+  }
+
+  select.addEventListener("change", (e) => { city = e.target.value; render(city); });
+  render(city);
+  setInterval(() => render(city), 10 * 60 * 1000); // refresco cada 10 min
+})();
+/* ===== /WIDGET DEL TIEMPO ===== */
